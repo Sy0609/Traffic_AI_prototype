@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 
-from opencv_basics import preprocess_frame, save_outputs
+from .opencv_basics import preprocess_frame, save_outputs
 
 
 def average_line(line_list, height):
