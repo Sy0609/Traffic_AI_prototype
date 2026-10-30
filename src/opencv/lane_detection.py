@@ -54,6 +54,8 @@ def detect_lanes(frame, edges):
     left_lines = []
     right_lines = []
 
+    center_x = width // 2
+
     if lines is not None:
         for line in lines:
             x1, y1, x2, y2 = line.reshape(-1)[:4]
@@ -61,14 +63,21 @@ def detect_lanes(frame, edges):
             if x2 == x1:
                 continue
 
+            # Tinh do doc cua doan thang
             slope = (y2 - y1) / (x2 - x1)
 
+            # Bo qua cac doan thang gan nam ngang
             if abs(slope) < 0.4:
                 continue
 
-            if slope < 0:
+            # Tinh vi tri trung binh theo truc X
+            center_line_x = (x1 + x2) / 2
+
+            # Phan loai lan trai va lan phai
+            if slope < 0 and center_line_x < center_x:
                 left_lines.append((x1, y1, x2, y2))
-            else:
+
+            elif slope > 0 and center_line_x > center_x:
                 right_lines.append((x1, y1, x2, y2))
 
     # 3. Ve duong dai dai dien cho lan duong
@@ -122,3 +131,7 @@ def run_lane_detection(video_path="videos/road.mp4"):
     cap.release()
     cv2.destroyAllWindows()
     print("Hoan thanh!")
+
+
+if __name__ == "__main__":
+    run_lane_detection()

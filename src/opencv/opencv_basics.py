@@ -13,13 +13,13 @@ def preprocess_frame(frame):
 
 
 def save_outputs(frame, gray, edges, roi, result):
-    """Luu cac anh ket qua vao thu muc outputs."""
-    os.makedirs("outputs", exist_ok=True)
+    """Luu cac anh ket qua vao thu muc outputs/opencv."""
+    os.makedirs("outputs/opencv", exist_ok=True)
 
-    cv2.imwrite("outputs/original.jpg", frame)
-    cv2.imwrite("outputs/gray.jpg", gray)
-    cv2.imwrite("outputs/edges.jpg", edges)
-    cv2.imwrite("outputs/roi.jpg", roi)
-    cv2.imwrite("outputs/lane_lines.jpg", result)
+    cv2.imwrite("outputs/opencv/original.jpg", frame)
+    cv2.imwrite("outputs/opencv/gray.jpg", gray)
+    cv2.imwrite("outputs/opencv/edges.jpg", edges)
+    cv2.imwrite("outputs/opencv/roi.jpg", roi)
+    cv2.imwrite("outputs/opencv/lane_lines.jpg", result)
 
-    print("Da luu 5 anh vao thu muc outputs!")
+    print("Da luu 5 anh vao outputs/opencv!")
