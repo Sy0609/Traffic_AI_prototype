@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# YOLO results
+runs/
+
+# Model weights
+*.pt
+
+# VS Code
+.vscode/
