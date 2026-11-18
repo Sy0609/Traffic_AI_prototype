@@ -1,4 +1,22 @@
+<<<<<<< HEAD
 .venv/
 __pycache__/
 *.py[cod]
 .DS_Store
+=======
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# YOLO results
+runs/
+
+# Model weights
+*.pt
+
+# VS Code
+.vscode/
+>>>>>>> b07ef179a27482644094c5dc076125aaee5a1ab9
