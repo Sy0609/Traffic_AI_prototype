@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 
 class TrafficSignDetector:
-    def __init__(self, model_path="runs/detect/runs/traffic_signs/yolo26n_gtsdb/weights/best.pt", conf=0.25):
+    def __init__(self, model_path="best.pt", conf=0.25):
         """
         Khởi tạo bộ nhận diện.
         """
